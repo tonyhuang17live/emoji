@@ -894,6 +894,6 @@ var reg = regexp.MustCompile("(:\\w+:)")
 // (unless it could not be found, in which case it is let alone).
 func Emojitize(emojis string) string {
 	return reg.ReplaceAllStringFunc(emojis, func(str string) string {
-		return Emoji(str) + " "
+		return Emoji(str)
 	})
 }
