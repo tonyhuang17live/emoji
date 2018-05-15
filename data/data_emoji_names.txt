@@ -285,7 +285,8 @@
 1F429;poodle
 1F42A;dromedary_camel
 1F42B;camel
-1F42C;dolphin/flipper
+1F42C;dolphin
+1F42C;flipper
 1F42D;mouse
 1F42E;cow
 1F42F;tiger
@@ -749,7 +750,7 @@
 25FE;black_medium_small_square
 260E;phone/telephone
 261D;point_up
-263A;relaxed
+263A-FE0F;relaxed
 264A;gemini
 264B;cancer
 264C;leo
@@ -790,7 +791,7 @@
 2B1C;white_large_square
 2B50;star
 2B55;o
-303D;part_alternation_mark
+303D-FE0F;part_alternation_mark
 2049;interrobang
 2122;tm
 2139;information_source
@@ -800,7 +801,7 @@
 2197;arrow_upper_right
 2198;arrow_lower_right
 2199;arrow_lower_left
-2600;sunny
+2600-FE0F;sunny
 2601;cloud
 2611;ballot_box_with_check
 2614;umbrella_with_rain_drops

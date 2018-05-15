@@ -67,18 +67,21 @@ func loadShortName(line string) error {
 	if len(parts) != 2 {
 		fmt.Errorf("%s format error", line)
 	} else {
-		key := ":" + parts[1] + ":"
+		keys := strings.Split(parts[1], "/")
+		for _, k := range keys {
+			key := ":" + k + ":"
 
-		if _, ok := emojiMap[key]; !ok {
-			unicodes := strings.Split(parts[0], "-")
-			value := ""
-			for _, s := range unicodes {
-				value += fmt.Sprintf("\\U%08s", s)
+			if _, ok := emojiMap[key]; !ok {
+				unicodes := strings.Split(parts[0], "-")
+				value := ""
+				for _, s := range unicodes {
+					value += fmt.Sprintf("\\U%08s", s)
+				}
+
+				emojiMap[key] = value
+			} else {
+				return fmt.Errorf("%s already existed", line)
 			}
-
-			emojiMap[key] = value
-		} else {
-			return fmt.Errorf("%s already existed", line)
 		}
 	}
 

@@ -94,7 +94,7 @@
 1F4FD;film_projector
 1F4FF;prayer_beads
 1F549;om_symbol
-1F54A;dove_of_peace
+1F54A-FE0F;dove_of_peace
 1F54B;kaaba
 1F54C;mosque
 1F54D;synagogue
@@ -183,7 +183,7 @@
 2602;umbrella
 2603;snowman
 2604;comet
-2618;shamrock
+2618-FE0F;shamrock
 2620;skull_and_crossbones
 2622;radioactive_sign
 2623;biohazard_sign
@@ -199,7 +199,7 @@
 2697;alembic
 2699;gear
 269B;atom_symbol
-269C;fleur_de_lis
+269C-FE0F;fleur_de_lis
 26B0;coffin
 26B1;funeral_urn
 26C8;thunder_cloud_and_rain
