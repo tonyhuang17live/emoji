@@ -834,7 +834,7 @@
 2754;grey_question
 2755;grey_exclamation
 2757;exclamation/heavy_exclamation_mark
-2764;heart
+2764-FE0F;heart
 2795;heavy_plus_sign
 2796;heavy_minus_sign
 2797;heavy_division_sign
