@@ -802,7 +802,7 @@
 2198;arrow_lower_right
 2199;arrow_lower_left
 2600-FE0F;sunny
-2601;cloud
+2601-FE0F;cloud
 2611;ballot_box_with_check
 2614;umbrella_with_rain_drops
 2615;coffee
@@ -814,13 +814,13 @@
 2653;pisces
 2660;spades
 2663;clubs
-2665;hearts
+2665-FE0F;hearts
 2666;diamonds
 2668;hotsprings
 2693;anchor
 2702;scissors
 2705;white_check_mark
-2708;airplane
+2708-FE0F;airplane
 2709;email/envelope
 2712;black_nib
 2714;heavy_check_mark

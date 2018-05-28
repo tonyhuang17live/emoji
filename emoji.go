@@ -164,7 +164,7 @@ func Emoji(emoji string) string {
 	return val
 }
 
-var reg = regexp.MustCompile("(:\\w+:)")
+var reg = regexp.MustCompile("(:[\\w-]+:)")
 
 // Emojitize takes in a string with emojis specified in it, and returns
 // a string with every emoji place holder replaced with it's unicode value
