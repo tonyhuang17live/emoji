@@ -88,7 +88,7 @@
 1F3F8;badminton_racquet_and_shuttlecock
 1F3F9;bow_and_arrow
 1F3FA;amphora
-1F43F;chipmunk
+1F43F-FE0F;chipmunk
 1F441;eye
 1F4F8;camera_with_flash
 1F4FD;film_projector
@@ -215,7 +215,7 @@
 26F9;person_with_ball
 270D;writing_hand
 271D;latin_cross
-2721;star_of_david
+2721-FE0F;star_of_david
 2763;heavy_heart_exclamation_mark_ornament
 
 # flags

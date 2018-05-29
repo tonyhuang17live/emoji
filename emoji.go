@@ -92,23 +92,42 @@ var expandReplacements = []struct {
 	re          *regexp.Regexp
 	replacement []string
 }{
+	{regexp.MustCompile(`{GENDER}`), []string{"male", "female"}},
+	{regexp.MustCompile(`{M/W}`), []string{"man", "woman"}},
 	{regexp.MustCompile(`{MAN/WOMAN}`), []string{"1F468", "1F469"}},
 	{regexp.MustCompile(`{MALE/FEMALE}`), []string{"2642-FE0F", "2640-FE0F"}},
-	{regexp.MustCompile(`{GENDER}`), []string{"male", "famale"}},
-	{regexp.MustCompile(`{M/W}`), []string{"man", "woman"}},
 	{regexp.MustCompile(`{SKIN}`), []string{"", "-1F3FB", "-1F3FC", "-1F3FD", "-1F3FE", "-1F3FF"}},
 	{regexp.MustCompile(`{SKIN!}`), []string{"-1F3FB", "-1F3FC", "-1F3FD", "-1F3FE", "-1F3FF"}},
 }
 
-func expandShortNameLine(line string) ([]string, error) {
+var blacklists = map[string][]string{
+	"male":   []string{"1F469", "2640-FE0F"}, // male cannot be replaced with WOMAN and FEMALE
+	"man":    []string{"1F469", "2640-FE0F"}, // man cannot be replaced with WOMAN and FEMALE
+	"female": []string{"1F468", "2642-FE0F"}, // female cannot be replaced with MAN and MALE
+	"woman":  []string{"1F468", "2642-FE0F"}, // woman cannot be replaced with MAN and MALE
+}
+
+func contains(list []string, s string) bool {
+	for _, t := range list {
+		if t == s {
+			return true
+		}
+	}
+	return false
+}
+
+func expandShortNameLine(line string, blacklist ...string) ([]string, error) {
 	ret := []string{}
 
 	for _, e := range expandReplacements {
 		if e.re.MatchString(line) {
-			for i, _ := range e.replacement {
-				replacement := e.re.ReplaceAllString(line, e.replacement[i])
+			for _, r := range e.replacement {
+				if contains(blacklist, r) {
+					continue
+				}
 
-				if replacementRecusive, err := expandShortNameLine(replacement); err != nil {
+				replacement := e.re.ReplaceAllString(line, r)
+				if replacementRecusive, err := expandShortNameLine(replacement, blacklists[r]...); err != nil {
 					fmt.Println("err ", err)
 				} else {
 					ret = append(ret, replacementRecusive...)
