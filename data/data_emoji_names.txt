@@ -812,10 +812,10 @@
 2651;capricorn
 2652;aquarius
 2653;pisces
-2660;spades
-2663;clubs
+2660-FE0F;spades
+2663-FE0F;clubs
 2665-FE0F;hearts
-2666;diamonds
+2666-FE0F;diamonds
 2668;hotsprings
 2693;anchor
 2702;scissors
