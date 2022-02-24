@@ -729,6 +729,7 @@
 1F6C3;customs
 1F6C4;baggage_claim
 1F6C5;left_luggage
+1F975;hot_face
 203C;bangbang
 21A9;leftwards_arrow_with_hook
 21AA;arrow_right_hook
